@@ -1,0 +1,547 @@
+body {
+    background-color: $light-color;
+    @include font-size(15);
+    color: $text-color;
+    font-family: $primary-font;
+    font-weight: normal;
+    font-style: normal;
+    line-height: $body-line-height;
+    -webkit-font-smoothing: antialiased;
+    word-wrap: break-word;
+    scroll-behavior: smooth;
+    transition: all 0.5s;
+    @include bp(mdx) {
+        font-size: 13px;
+    }
+}
+p {
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    @include bp (mdx) {
+        font-size: 13px;
+    }
+}
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+blockquote,
+pre {
+    background-color: darken($light-color, 2%);
+    border-width: 0 0 0 3px;
+    border-color: darken($light-color, 15%);
+    border-style: solid;
+    @include box-shadow(none);
+    color: lighten($dark-color, 10%);
+    font-family: $primary-font;
+    font-style: italic;
+    margin: 0 0 15px 0;
+    padding: 25px 22px;
+    @include font-size(18);
+    @include bp(mdx) {
+        font-size: 14px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+blockquote {
+    background-color: transparent;
+    border-left: none;
+    color: $title-color;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    padding: 30px;
+    &:before {
+        background-color: #fff;
+        color: lighten($dark-color, 20%);
+        content: "\f10d";
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        @include font-size(20);
+        float: left;
+        margin-right: 20px;
+        line-height: 1;
+        font-style: normal;
+        position: absolute;
+        left: 50%;
+        @include translate(-50%, 0);
+        top: -10px;
+        padding: 0 10px;
+        z-index: 9;
+    }
+    &:after {
+        border-bottom: 2px solid #ddd;
+        border-top: 2px solid #ddd;
+        content: "";
+        bottom: 0;
+        content: "";
+        display: block;
+        left: 50%;
+        @include translate(-50%, 0);
+        position: absolute;
+        top: 0;
+        width: 200px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+    cite {
+        color: #8d8d8d;
+        display: block;
+        font-style: normal;
+        @include font-size(13);
+    }
+}
+abbr,
+acronym {
+    border-bottom: 1px dotted lighten($dark-color, 30%);
+    cursor: help;
+}
+mark,
+ins {
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+big {
+    font-size: 125%;
+}
+b,
+strong {
+    font-weight: 700;
+}
+iframe {
+    display: block;
+    width: 100%;
+}
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+/*--------------------------------------------------------------
+# Heading
+--------------------------------------------------------------*/
+%heading-group {
+    color: $title-color;
+    font-family: $title-font;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %heading-group;
+    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: $title-line-height;
+    a {
+        color: inherit;
+    }
+}
+h1 {
+    @include font-size(60);
+}
+h2 {
+    @include font-size(50);
+}
+h3 {
+    @include font-size(40);
+}
+h4 {
+    @include font-size(30);
+}
+h5 {
+    @include font-size(20);
+}
+h6 {
+    @include font-size(14);
+}
+@include bp(mdx) {
+    h1 {
+        @include font-size(34);
+    }
+    h2 {
+        @include font-size(27);
+    }
+    h3 {
+        @include font-size(22);
+    }
+    h4 {
+        @include font-size(18);
+    }
+    h5 {
+        @include font-size(15);
+    }
+    h6 {
+        @include font-size(13);
+    }
+}
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+ul,
+ol {
+    margin: 0 0 1.5em 0.875em;
+}
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
+li>ul,
+li>ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 1.5em 1.5em;
+}
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a {
+    color: $primary-color;
+    text-decoration: none;
+    @include transition (color 0.3s);
+    &:hover,
+    &:focus,
+    &:active {
+        color: $hover-color;
+        text-decoration: none;
+        outline: 0;
+    }
+    &:visited {
+        text-decoration: none;
+        outline: 0;
+    }
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+    &:focus {
+        background-color: darken($light-color, 10%);
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        clip-path: none;
+        color: lighten($dark-color, 10%);
+        display: block;
+        @include font-size(14);
+        font-weight: bold;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000;
+        /* Above WP toolbar. */
+    }
+}
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+/*--------------------------------------------------------------
+# Others
+--------------------------------------------------------------*/
+.container {
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.overlay,
+.pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+// line scss start
+// border-curve scss start
+.round-border {
+    @include border-radius($border-radius-degree);
+}
+.figure-round-border {
+    @include border-radius($border-radius-degree);
+    overflow: hidden;
+    img {
+        @include border-radius($border-radius-degree);
+    }
+}
+// end
+// number countng border scss
+.counter-inner-two-side {
+    .counter-item {
+        padding: 20px 25px;
+        text-align: center;
+        border-right: 0;
+        &:first-child {
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+            border-color: rgba($light-color, 0.17);
+        }
+        &:last-child {
+            border-width: 1px 0 0 1px;
+            border-style: solid;
+            border-color: rgba($light-color, 0.17);
+            margin-top: -1px;
+            margin-left: -1px;
+        }
+        .counter-no {
+            color: $light-color;
+            font-size: 40px;
+            font-family: $title-font;
+            font-weight: 700;
+            line-height: 1.2;
+            @include bp(mdx) {
+                font-size: 35px;
+            }
+        }
+        .Completed {
+            color: $light-color;
+        }
+    }
+}
+.counter-inner {
+    .counter-item {
+        padding: 25px;
+        text-align: center;
+        border-right: 1px solid #d9d9d9;
+        &:last-child {
+            border-right: 0;
+        }
+        @include bp(lgx) {
+            border-right: 0;
+            &:first-child {
+                border-width: 0 1px 1px 0;
+                border-style: solid;
+                border-color: #d9d9d9;
+            }
+            &:last-child {
+                border-width: 1px 0 0 1px;
+                border-style: solid;
+                border-color: #d9d9d9;
+                margin-top: -1px;
+                margin-left: -1px;
+            }
+        }
+        @include bp(smx) {
+            border-width: 1px 0 0 0px;
+            border-style: solid;
+            border-color: #d9d9d9;
+            &:first-child {
+                border-width: 0px 0 0 0;
+                border-style: solid;
+                border-color: #d9d9d9;
+            }
+            &:last-child {
+                border-width: 1px 0 1px 0px;
+                border-style: solid;
+                border-color: #d9d9d9;
+            }
+        }
+        .counter-no {
+            color: $secondary-color;
+            font-size: 52px;
+            font-family: $title-font;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        .Completed {
+            color: $secondary-color;
+            font-size: 13px;
+            line-height: 1.2;
+        }
+    }
+}
+// end
+// section head margin scss
+.banner-section-head-white-info {
+    line-height: 1;
+    .section-sub-title {
+        padding-left: 32px;
+        color: $light-color;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        display: inline-block;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 2px;
+            width: 20px;
+            background-color: $light-color;
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+        }
+    }
+    .section-title {
+        margin-bottom: 30px;
+        color: $light-color;
+    }
+    .section-paragraph {
+        margin-bottom: 15px;
+        line-height: 1.5;
+        color: $inner-text-color;
+    }
+    .section-btn {
+        margin-top: 20px;
+    }
+}
+.section-head-white-info {
+    line-height: 1;
+    .section-sub-title {
+        line-height: $title-line-height;
+        padding-left: 32px;
+        color: $light-color;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        display: inline-block;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 2px;
+            width: 20px;
+            background-color: $light-color;
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+        }
+    }
+    .section-title {
+        margin-bottom: 20px;
+        color: $light-color;
+    }
+    .section-paragraph {
+        margin-bottom: 15px;
+        line-height: 1.5;
+        color: $inner-text-color;
+    }
+    .section-btn {
+        margin-top: 20px;
+    }
+}
+.section-head-info {
+    line-height: 1;
+    margin-bottom: 40px;
+    .section-sub-title {
+        line-height: $title-line-height;
+        padding-left: 32px;
+        color: $primary-color;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        display: inline-block;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 2px;
+            width: 20px;
+            background-color: $primary-color;
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+        }
+    }
+    .section-title {
+        margin-bottom: 20px;
+    }
+    .section-paragraph {
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    .section-btn {
+        margin-top: 20px;
+    }
+}
+.section-head {
+    line-height: 1;
+    margin-bottom: 40px;
+    .section-sub-title {
+        line-height: $title-line-height;
+        padding-left: 32px;
+        color: $primary-color;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        display: inline-block;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 2px;
+            width: 20px;
+            background-color: $primary-color;
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+        }
+    }
+    .section-title {
+        margin-bottom: 0px;
+    }
+}
+.section-head-white {
+    line-height: 1;
+    margin-bottom: 40px;
+    .section-sub-title {
+        line-height: $title-line-height;
+        padding-left: 32px;
+        color: $light-color;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        display: inline-block;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 2px;
+            width: 20px;
+            background-color: $light-color;
+            top: 50%;
+            left: 0;
+            @include translate(0, -50%);
+        }
+    }
+    .section-title {
+        margin-bottom: 0px;
+        color: $light-color;
+    }
+}
+// end

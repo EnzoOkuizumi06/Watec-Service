@@ -1,0 +1,120 @@
+.home-banner {
+    position: relative;
+    z-index: 1;
+    background-color: $primary-color;
+    .banner-wrapper {
+        @include flexbox;
+        @include align-items(center);
+        .banner-left-detail {
+            @include flex-basis(55%);
+            .banner-detail {
+                margin-bottom: 130px;
+                @include bp(lgx) {
+                    margin-top: 65px;
+                    margin-bottom: 190px;
+                }
+                .banner-btn {
+                    padding: 15px 24px;
+                    margin-top: 18px;
+                }
+            }
+        }
+        .banner-right-img {
+            @include flex-basis(45%);
+        }
+        @include bp(mdx) {
+            @include flex-wrap(wrap);
+            text-align: center;
+            .banner-left-detail {
+                flex-basis: initial;
+                .banner-detail {
+                    margin: 65px auto;
+                }
+            }
+            .banner-right-img {
+                @include flex-basis(initial);
+                .banner-img {
+                    text-align: center;
+                    img {
+                        width: 56%;
+                    }
+                }
+            }
+        }
+        @include bp(smx) {
+            .banner-right-img {
+                .banner-img {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.banner-service-section {
+    margin-top: -206px;
+    position: relative;
+    z-index: 2;
+    .banner-service-wrapper {
+        @include flexbox;
+        @include align-items(center);
+        width: 60%;
+        @include bp(lgx) {
+            width: 80%;
+        }
+        .banner-hire-detail {
+            padding: 30px 20px;
+            border-top-left-radius: 25px;
+            @include box-shadow(0px 0px 25px 0px rgba(0, 0, 0, 0.1));
+            background-image: radial-gradient(at top left, #f8f8f8 74%, #ffffff 42%);
+            @include flexbox;
+            @include align-items(center);
+            @include flex-basis(64%);
+            .reverse-pipe-icon {
+                font-size: 50px;
+                margin-right: 20px;
+            }
+            .hire-info {
+                margin-bottom: 0;
+            }
+        }
+        .banner-service-content {
+            @include flex-basis(36%);
+            background-color: $secondary-color;
+            padding: 30px;
+            color: $dark-color;
+            .enginer-icon {
+                margin-bottom: 20px;
+                i {
+                    font-size: 60px;
+                }
+                .hire-btn {
+                    padding: 15px 24px;
+                }
+            }
+        }
+    }
+    @include bp(mdx) {
+        margin-top: -187px;
+        .banner-service-wrapper {
+            width: 100%;
+        }
+    }
+    @include bp(smx){
+        margin-top: -136px;
+        .banner-service-wrapper {
+            @include flex-wrap(wrap);
+            .banner-hire-detail {
+                @include flex-basis(100%);
+                border-top-right-radius: 25px;
+            }
+            .banner-service-content {
+                @include flex-basis(100%);
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                text-align: center;
+            }
+        }
+    }
+}

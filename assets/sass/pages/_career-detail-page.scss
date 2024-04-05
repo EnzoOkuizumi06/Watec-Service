@@ -1,0 +1,225 @@
+.career-detail-section {
+    position: relative;
+    z-index: 1;
+    padding: 110px 0;
+    @include bp(mdx) {
+        padding: 60px 0;
+    }
+    .job-description {
+        background-color: $primary-color;
+        @include border-radius($border-radius-degree);
+        overflow: hidden;
+        ul {
+            margin: 0;
+            padding: 0;
+            @include flexbox();
+            @include flex-wrap(wrap);
+            text-align: center;
+            padding: 20px 0;
+        }
+        li {
+            color: #787878;
+            list-style: none;
+            display: inline-block;
+            padding: 0 8px;
+            width: 25%;
+            font-size: 16px;
+            font-weight: 600;
+            border-right: 2px solid rgba($light-color, 0.66);
+            span {
+                display: inline-block;
+                margin-bottom: 3px;
+                font-size: 13px;
+                font-weight: 500;
+                color: $light-color;
+                text-transform: capitalize;
+            }
+            h6,
+            h5,
+            h4 {
+                margin-bottom: 0;
+                color: $light-color;
+                text-transform: capitalize;
+            }
+            h6 {
+                font-size: 16px;
+                font-weight: 500;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+        @include bp(smx) {
+            li {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba($light-color, 0.75);
+                padding: 10px 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        .job-imgage {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    @include bp(lg) {
+        .career-detail-container {
+            padding-left: 20px;
+        }
+    }
+    .tab-container {
+        .responsive-tabs .nav-tabs {
+            border-color: #d9d9d9;
+        }
+        .nav-item {
+            a {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.1;
+                font-family: $title-font;
+            }
+            &:hover {
+                a {
+                    color: $hover-color;
+                    border-color: secondary-color;
+                }
+            }
+        }
+        .active {
+            border-color: #d9d9d9 #d9d9d9 #fff;
+            a {
+                color: $hover-color;
+            }
+        }
+        .tab-content {
+            background-color: $light-color;
+            padding: 20px;
+            border-color: #d9d9d9;
+            @include bp (mdx) {
+                border-width: 1px;
+                @include border-radius($border-radius-degree);
+            }
+            @include bp (smx) {
+                padding: 0;
+            }
+            .card-body {
+                padding: 0;
+                @include bp (mdx) {
+                    padding: 0 22px;
+                }
+                h5 {
+                    margin-top: 8px;
+                    margin-bottom: 16px;
+                    font-weight: 900;
+                }
+                >ul {
+                    margin: 0;
+                    li {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+    .sidebar {
+        padding: 0;
+        .widget-bg {
+            background-color: $gray-color;
+            @include box-shadow(none);    
+            @include bp(smx) {
+                padding: 30px 20px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .bg-title {
+                background-color: $secondary-color;
+                color: $dark-color;
+                text-transform: uppercase;
+                padding: 17px;
+            }
+            ul {
+                li {
+                    color: $text-color;
+                    @include flexbox;
+                    @include align-items(center);
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    i {
+                        font-size: 14px;
+                        color: $primary-color;
+                        line-height: 1.5;
+                    }
+                    .list-txt {
+                        color: $text-color;
+                    }
+                }
+            }
+            .accordion-content {
+                .card {
+                    .card-header {
+                        a {
+                            padding: 18px;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 1.1;
+                            color: $dark-color;
+                            &:before {
+                                color: $dark-color;
+                                @include transition(all 0.4s);
+                            }
+                        }
+                    }
+                }
+                .collapse {
+                    .card-body {
+                        color: $text-color;
+                    }
+                }
+            }
+            .widget-icon {
+                color: $light-color;
+                margin-bottom: 25px;
+                background-color: $primary-color;
+                width: 100px;
+                height: 100px;
+                line-height: 98px;
+                i {
+                    font-size: 50px;
+                }
+            }
+            p {
+                a {
+                    color: $primary-color;
+                    @include transition(all 0.4s);
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+            }
+            .or-style {
+                color: $primary-color;
+                font-family: $title-font;
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+                &:before,
+                &:after {
+                    background-color: $primary-color;
+                }
+            }
+        }
+        .upload-widget {
+            position: relative;
+            z-index: 1;
+            .button-primary {
+                margin-top: 0;
+            }
+        }
+    }
+}

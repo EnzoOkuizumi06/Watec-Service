@@ -1,0 +1,233 @@
+.about-section {
+    margin: 110px 0 110px;
+    @include bp(mdx) {
+        margin: 65px 0;
+    }
+    .about-inner {
+        .about-detail {
+            margin-top: 20px;
+            margin-right: 80px;
+            @include bp(lgx) {
+                margin-top: 0;
+                margin-right: 20px;
+            }
+            @include bp(mdx) {
+                margin-right: 0;
+            }
+        }
+        .about-image {
+            position: relative;
+            background-image: url(assets/img/plumbero-img16.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: 540px;
+            overflow: hidden;
+            @include bp(mdx) {
+                min-height: 400px;
+            }
+            .video-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate(-50%, -50%);
+            }
+        }
+    }
+    .about-counter-wrapper {
+        padding: 50px 50px 50px 50px;
+        background-color: $secondary-color;
+        border-width: 8px 8px 0 0;
+        border-style: solid;
+        border-color: $light-color;
+        position: relative;
+        z-index: 1;
+        @include flexbox;
+        @include justify-content(center);
+        width: 60%;
+        margin-top: -103px;
+        .counter-item {
+            padding-right: 30px;
+            padding-left: 38px;
+            border-right: 1px solid rgba(229, 193, 143, 0.58);
+            text-align: center;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                border-right: none;
+                padding-right: 0;
+            }
+            .counter-no {
+                color: $primary-color;
+                font-size: 50px;
+                font-family: $title-font;
+                font-weight: 700;
+                line-height: 1.1;
+                @include bp(mdx) {
+                    font-size: 35px;
+                }
+            }
+            .Completed {
+                color: $dark-color;
+            }
+        }
+        @include bp(lgx) {
+            margin-top: -40px;
+            width: 85%;
+            border-width: 8px;
+            padding: 40px;
+        }
+        @include bp(mdx) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 95%;
+        }
+        @include bp(xsx) {
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            .counter-item {
+                padding: 30px 0;
+                border-bottom: 1px solid rgba(229, 193, 143, 0.58);
+                border-right: 0;
+                width: 100%;
+                &:first-child {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .goal-wrapper {
+        margin-top: 80px;
+        position: relative;
+        z-index: 1;
+        .goal-detail {
+            background-color: $light-color;
+            padding: 35px;
+            @include box-shadow(0px 0px 15px 5px rgba(0, 0, 0, 0.05));
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            position: absolute;
+            p {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .goal-img {
+            padding: 0 330px;
+            @include bp(lg) {
+                width: auto;
+            }
+            @include bp(lgx) {
+                padding: 0;
+                text-align: center;
+            }
+            @include bp(mdx) {
+                margin-bottom: 20px;
+            }
+        }
+        .vision-inner {
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            @include bp(lg) {
+                left: 0;
+                top: 50%;
+                transform: translateY(calc(-50% + 8px));
+            }
+            @include bp(lgx) {
+                @include border-radius($border-radius-degree);
+            }
+            @include bp(mdx) {
+                margin-bottom: 20px;
+            }
+        }
+        .mission-inner {
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+            @include bp(lg) {
+                right: 0;
+                top: 40px;
+            }
+            @include bp(lgx) {
+                @include border-radius($border-radius-degree);
+            }
+            @include bp(mdx) {
+                margin-bottom: 20px;
+            }
+        }
+        @include bp(lgx) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 15px;
+            @include align-items(center);
+            .goal-detail {
+                position: relative;
+                padding: 30px;
+            }
+        }
+        @include bp(mdx) {
+            display: block;
+            margin-top: 65px;
+        }
+    }
+    .about-patner-img {
+        margin-top: 50px;
+        .partner-logo {
+            img {
+                width: 114px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.subscribe-section {
+    background-color: $gray-color;
+    padding: 110px 0;
+    @include bp(mdx) {
+        padding: 65px 0;
+    }
+    .subscribe-form {
+        @include flexbox;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        .from-group {
+            @include flex-basis(40%);
+            padding: 0 12px;
+            margin-bottom: 20px;
+            margin-bottom: 15px;
+            input {
+                background-color: $light-color;
+                border: 1px solid #d9d9d9;
+                width: 100%;
+            }
+        }
+        input[type="submit"] {
+            @include border-radius($border-radius-degree);
+            padding: 15px 24px;
+            margin: 0 12px;
+            height: 48px;
+            @include bp(smx) {
+                padding: 10px 15px;
+                height: 40px;
+            }
+        }
+        @include bp(smx) {
+            display: block;
+            .from-group {
+                padding: 0;
+            }
+            input[type="submit"] {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}

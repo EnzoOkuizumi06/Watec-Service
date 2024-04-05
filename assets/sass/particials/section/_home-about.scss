@@ -1,0 +1,205 @@
+.home-aboutus {
+    background-color: $gray-color;
+    padding: 110px 0 108px;
+    .home-aboutus-inner {
+        display: grid;
+        grid-template-columns: 25% auto;
+        .about-gallary {
+            text-align: right;
+            .figure-round-border {
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .home-about-right {
+            padding-left: 15px;
+            .about-content {
+                @include flexbox;
+                @include align-items(center);;
+                .about-top-right-img {
+                    margin-top: 56px;
+                    margin-bottom: 15px;
+                    @include flex-basis(30%);
+                }
+                .section-head-info {
+                    @include flex-basis(70%);
+                    padding-left: 20px;
+                    margin-bottom: 0;
+                }
+            }
+            .about-detail {
+                @include flexbox;
+                .about-bottom-right-img {
+                    @include flex-basis(35%);
+                }
+                .about-detail-inner {
+                    @include flex-basis(65%);
+                    padding-left: 70px;
+                    @include bp(lgx) {
+                        padding-left: 20px;
+                    }
+                    .about-list {
+                        @include border-radius($border-radius-degree);
+                        background-color: $light-color;
+                        @include box-shadow(0px 10px 20px -10px rgba(0, 0, 0, 0.15));
+                        padding: 25px;
+                        margin-bottom: 20px;
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style-type: none;
+                            li {
+                                margin-bottom: 12px;
+                                @include flexbox;
+                                @include align-items(center);;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                                i {
+                                    font-size: 25px;
+                                    color: $divider-title-color;
+                                }
+                                span {
+                                    color: $text-color;
+                                    padding-left: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .author-content {
+                        @include flexbox;
+                        .auhtor-signature {
+                            width: 142px;
+                            margin-right: 20px;
+                        }
+                        .author-detail {
+                            .author-name {
+                                margin-bottom: 0px;
+                                margin-top: 8px;
+                                font-size: 16px;
+                                font-weight: 500;
+                            }
+                            .author-prof {
+                                font-size: 13px;
+                                line-height: 1.2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include bp(mdx) {
+        padding: 65px 0;
+        .home-aboutus-inner {
+            grid-template-columns: auto;
+            grid-row-gap: 10px;
+            .about-gallary {
+                @include flexbox;
+                text-align: center;
+                @include align-items(center);;
+                @include justify-content(center);
+                .figure-round-border {
+                    @include flex-grow(1);
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .home-about-right {
+                padding-left: 0px;
+                .about-detail {
+                    .about-detail-inner {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        .home-about-place {
+            grid-template-columns: auto;
+        }
+    }
+    @include bp(smx) {
+        .home-aboutus-inner {
+            .home-about-right {
+                padding-left: 0;
+                .about-detail {
+                    @include flex-direction(column);
+                    @include align-items(center);;
+                    .about-detail-inner {
+                        padding-left: 0;
+                        margin-top: 20px;
+                        .author-content {
+                            @include justify-content(center);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include bp(xsx) {
+        .home-aboutus-inner {
+            grid-row-gap: 10px;
+            .about-gallary {
+                @include flex-wrap(wrap);
+                .figure-round-border {
+                    @include flex-grow(1);
+                    @include flex-basis(46%);
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        margin-bottom: 10px;
+                    }
+                    &:nth-child(2) {
+                        order: 3;
+                        width: 100%;
+                        margin: 0;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .home-about-right {
+                .about-content {
+                    @include flex-direction(column);
+                    @include align-items(center);;
+                    .about-top-right-img {
+                        margin: 0px 0 20px;
+                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .section-head-info {
+                        padding-left: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+                .about-detail {
+                    .about-detail-inner {
+                        .about-list {
+                            padding: 25px 10px;
+                            ul {
+                                li {
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                    span {
+                                        padding-left: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,187 @@
+.carrer-page-section {
+    padding: 110px 0 0;
+    @include bp (mdx) {
+        padding: 65px 0 0;
+    }
+}
+.vacancy-container {
+    margin-bottom: 80px;
+    padding-top: 20px;
+    .vacancy-form {
+        @include box-shadow(0px 0px 30px 0px rgba($dark-color, 0.15));
+        background-color: $light-color;
+        padding: 30px 20px;
+        text-align: center;
+        @include border-radius(30px);
+        h4 {
+            background-color: $secondary-color;
+            color: $dark-color;
+            padding: 17px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+            border-radius: 30px;
+        }
+        form {
+            text-align: left;
+            margin-top: 30px;
+            p {
+                margin-bottom: 20px;
+            }
+        }
+        textarea {
+            border: none;
+            padding: 17px;
+            color: $text-color;
+            @include bp(lg) {
+                margin: 0 7px;
+            }
+        }
+        input {
+            width: 100%;
+            border: none;
+            padding: 17px;
+            color: $text-color;
+            @include bp(lg) {
+                margin: 0 7px;
+            }
+            &:not([type="submit"]) {
+                height: 59px;
+            }
+            &[type="submit"] {
+                border: 2px solid $light-color;
+                color: $light-color;
+                padding: 15px 30px;
+                font-size: 15px;
+                @include transition(all 0.4s);
+                &:hover {
+                    border-color: $hover-color;
+                }
+            }
+        }
+    }
+}
+.vacancy-content {
+    margin-bottom: 30px;
+    padding: 40px;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    background-color: $light-color;
+    @include bp(smx) {
+        padding: 30px;
+    }
+    @include bp(xsx) {
+        padding: 25px;
+    }
+    span {
+        color: $primary-color;
+        margin-bottom: 18px;
+        font-weight: 600;
+        display: block;
+        font-size: 14px;
+        font-family: $title-font;
+    }
+    a {
+        .vacancy-title {
+            @include transition(all 0.4s);
+        }
+        &:hover {
+            .vacancy-title {
+                color: $hover-color;
+            }
+        }
+    }
+    p {
+        margin-bottom: 30px;
+    }
+}
+.vacancy-content-wrap {
+    @include bp(lg) {
+        margin-right: 26px;
+    }
+    [class*="col-"] {
+        &:first-child,
+        &:nth-child(4n+4),
+        &:nth-child(4n+5) {
+            .vacancy-content {
+                @include box-shadow(0px 0px 13px -4px rgba(0, 0, 0, 0.25));
+                border: none;
+            }
+        }
+    }
+}
+.about-service-wrap {
+    padding: 110px 0 90px;
+    background-color: $inner-text-color;
+    @include bp(mdx) {
+        padding: 65px 0 45px;
+    }
+    .row {
+        row-gap: 20px;
+    }
+    .iconbox-container {
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-top: 50px;
+        @include bp(smx) {
+            .iconbox-container {
+                padding-top: 10px;
+            }
+        }
+    }
+}
+.iconbox-item-3 {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    background-color: $inner-text-color;
+    width: 100%;
+    @include bp(md) {
+        width: 50%;
+    }
+    @include bp(lg) {
+        width: 33.33%;
+    }
+}
+.iconbox-border {
+    @include box-shadow(0px 0px 15px 0px rgba(0, 0, 0, 0.1));
+    padding: 25px;
+    width: 100%;
+    border-radius: 25px;
+    background-color: $inner-text-color;
+    .iconbox-icon {
+        background-color: $primary-color;
+        color: $light-color;
+        font-size: 32px;
+        width: 78px;
+        height: 78px;
+        line-height: 78px;
+        text-align: center;
+        border-radius: 100%;
+    }
+    .iconbox-content {
+        @include calc(width, '100% - 78px');
+        padding-left: 20px;
+        h5 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    @include bp(smx) {
+        padding: 25px 20px;
+        .iconbox-icon {
+            font-size: 28px;
+            width: 68px;
+            height: 68px;
+            line-height: 67px;
+        }
+        .iconbox-content {
+            padding-left: 15px;
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+.home-service-section {
+    padding: 107px 0 130px;
+    @include bp(mdx) {
+        padding: 65px 0;
+    }
+    .service-detail-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 15px;
+        margin-bottom: 40px;
+        @include align-items(end);
+        @include bp (lgx) {
+            grid-template-columns: auto;
+        }
+        .section-head {
+            margin-bottom: 0;
+            @include bp(lg) {
+                margin-right: 110px;
+            }
+        }
+    }
+    .type-of-service {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 60px;
+        .service-type {
+            padding: 38px 40px 52px;
+            @include border-radius($border-radius-degree);
+            background-color: transparent;
+            background-image: radial-gradient(at top left, #f8f8f8 74%, #fff 42%);
+            @include box-shadow(0px 0px 20px -10px rgba(0, 0, 0, 0.8));
+            position: relative;
+            z-index: 1;
+            .service-title {
+                h5 {
+                    @include transition(all 0.4s);
+                }
+                &:hover {
+                    h5 {
+                        color: $hover-color;
+                    }
+                }
+            }
+            .service-info {
+                margin-bottom: 25px;
+            }
+            .service-img-no {
+                .service-img {
+                    margin-bottom: 14px;
+                }
+                .service-no {
+                    margin-bottom: 0;
+                    color: rgba(0, 0, 0, 0);
+                    -webkit-text-stroke-width: 1px;
+                    stroke-width: 1px;
+                    -webkit-text-stroke-color: #000;
+                    stroke: #000;
+                }
+            }
+            .service-type-btn {
+                position: absolute;
+                left: 40px;
+                bottom: -20px;
+                @include transition(all 0.4s);
+                i {
+                    background-color: $primary-color;
+                    color: $light-color;
+                    height: 42px;
+                    width: 42px;
+                    line-height: 41px;
+                    font-size: 15px;
+                    border-radius: 50%;
+                    text-align: center;
+                    @include transition(all 0.4s);
+                }
+                &:hover {
+                    i {
+                        background-color: $hover-color;
+                    }
+                }
+            }
+        }
+        .service-notification {
+            padding: 40px;
+            @include flexbox;
+            @include flex-direction(column);
+            @include align-items(center);
+            @include justify-content(center);
+            text-align: center;
+            background-color: $secondary-color;
+            @include border-radius($border-radius-degree);
+            .notifiy-title {
+                margin-bottom: 30px;
+                @include bp(smx) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        @include bp(lgx) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include bp(mdx) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 50px;
+        }
+        @include bp(smx) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

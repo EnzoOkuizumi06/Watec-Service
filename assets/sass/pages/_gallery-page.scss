@@ -1,0 +1,9 @@
+.portfolio-appoinment {
+    margin-bottom: 110px;
+    @include bp(mdx) {
+        margin-bottom: 65px;
+    }
+    .reservation-form button{
+        height: 48px;
+    }
+}

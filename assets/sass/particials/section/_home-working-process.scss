@@ -1,0 +1,150 @@
+.home-working-step-section {
+    position: relative;
+    z-index: 1;
+    padding: 107px 0 289px;
+    margin-bottom: -180px;
+    background-image: url(assets/img/plumbero-img15.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include bp(mdx) {
+        padding: 65px 0 260px;
+    }
+    .overlay {
+        background-color: $primary-color;
+        opacity: 0.95;
+    }
+    .section-head-white {
+        margin-bottom: 50px;
+    }
+    .process-step {
+        .row {
+            row-gap: 50px;
+        }
+        .phase {
+            padding: 0px 28px;
+            color: $light-color;
+            text-align: center;
+            @include bp(lgx) {
+                padding: 0 18px;
+            }
+            @include bp(smx) {
+                padding: 0;
+            }
+            .phase-icon {
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                padding: 40px 40px 40px 40px;
+                background-image: url(assets/img/plumbero-img14.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-bottom: 40px;
+                i {
+                    font-size: 50px;
+                }
+                .phase-no {
+                    position: absolute;
+                    z-index: -1;
+                    bottom: -13px;
+                    left: 50%;
+                    transform: translateX(calc(-50% + 40px));
+                    margin-bottom: 0;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1.1;
+                    height: 43px;
+                    width: 43px;
+                    line-height: 42px;
+                    background-color: $secondary-color;
+                    color: $dark-color;
+                    @include border-radius(50%);
+                }
+            }
+            .phase-content {
+                .phase-title {
+                    color: $light-color;
+                }
+                .phase-info {
+                    color: #d9d9d9;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.home-appointment-section {
+    position: relative;
+    z-index: 2;
+    .reservation-inner {
+        display: grid;
+        @include align-items(center);
+        grid-template-columns: 35% auto;
+        @include border-radius($border-radius-degree);
+        overflow: hidden;
+        .reservation-section {
+            position: relative;
+            background-image: url(assets/img/plumbero-img16.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: 100%;
+            overflow: hidden;
+            .video-button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate(-50%, -50%);
+                a {
+                    background-color: $light-color;
+                    height: 80px;
+                    width: 80px;
+                    line-height: 80px;
+                    font-size: 25px;
+                    i {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+        .reservation-content {
+            padding: 50px 50px 44px;
+            background-color: $secondary-color;
+            @include bp(lgx) {
+                padding: 50px 25px;
+            }
+            @include bp(mdx) {
+                padding: 35px 25px 25px;
+            }
+            .section-head {
+                margin-bottom: 0;
+            }
+            .reservation-form {
+                margin: 0 -12px;
+                .form-group {
+                    margin-bottom: 10px;
+                    input,
+                    button {
+                        width: 100%;
+                    }
+                    input {
+                        width: 100%;
+                        background-color: $light-color;
+                    }
+                    button {
+                        @include bp(lgx) {
+                            padding: 15px 10px;
+                        } 
+                    }
+                }
+            }
+        }
+        @include bp(mdx){
+            grid-template-columns: auto;
+            .reservation-section {
+                min-height: 300px;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.service-working-step {
+    background-color: $gray-color;
+    padding: 110px 0;
+    background-image: none;
+    margin-bottom: 0;
+    @include bp(mdx) {
+        padding: 65px 0;
+    }
+    .process-step {
+        .phase{
+            color: $primary-color;
+            .phase-content {
+                .phase-title{
+                    color: $dark-color;
+                }
+                .phase-info {
+                    color: rgb(65, 65, 65);
+                }
+            }
+        }
+    }
+}

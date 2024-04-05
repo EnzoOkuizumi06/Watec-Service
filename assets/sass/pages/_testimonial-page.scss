@@ -1,0 +1,67 @@
+.Testimonial-page-section {
+    margin: 140px 0 55px;
+    @include bp(mdx) {
+        margin: 80px 0 25px;
+    }
+    .comment-inner-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 40px;
+        grid-column-gap: 50px;
+        @include bp(lgx) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include bp(mdx) {
+            grid-row-gap: 25px;
+        }
+        @include bp(smx) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-column-gap: 40px;
+        }
+        .comment-content {
+            padding: 35px 30px 25px 30px;
+            background-color: transparent;
+            background-image: radial-gradient(at top left, #f8f8f8 74%, #fff 42%);
+            @include box-shadow(0px 0px 25px 0px rgba(0, 0, 0, 0.2));
+            position: relative;
+            z-index: 1;
+            margin-bottom: 65px;
+            @include bp(smx) {
+                margin-bottom: 40px;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                top: -40px;
+                height: 60px;
+                width: 60px;
+                background-image: url(assets/img/plumbero-img13.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+            .author-detail {
+                @include flexbox();
+                @include align-items(center);
+                .author-img {
+                    height: 60px;
+                    width: 60px;
+                    @include border-radius(50%);
+                    overflow: hidden;
+                }
+                .author-info {
+                    margin-left: 15px;
+                    .author-name {
+                        margin-bottom: 0;
+                    }
+                    .author-desc {
+                        color: $primary-color;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

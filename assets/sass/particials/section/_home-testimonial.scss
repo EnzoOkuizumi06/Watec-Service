@@ -1,0 +1,157 @@
+.home-testimonials-section {
+    position: relative;
+    z-index: 1;
+    background-image: url(assets/img/plumbero-img15.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include bp(lgx) {
+        padding: 110px 0;
+    }
+    @include bp(mdx) {
+        padding: 65px 0;
+    }
+    .overlay {
+        background-color: $primary-color;
+        @include opacity(0.95);
+    }
+    .home-testimonial-wrapper {
+        display: grid;
+        @include align-items(center);
+        grid-template-columns: 38% 62%;
+        .section-head-white-info {
+            padding-right: 50px;
+        }
+        .comment-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 54px;
+            grid-row-gap: 65px;
+            .comment-group {
+                .comment-content {
+                    padding: 35px 30px 25px 30px;
+                    background-color: transparent;
+                    background-image: radial-gradient(at top left, #f8f8f8 74%, #fff 42%);
+                    @include box-shadow(0px 0px 25px 0px rgba(0, 0, 0, 0.2));
+                    position: relative;
+                    z-index: 1;
+                    margin-bottom: 65px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        z-index: 1;
+                        right: 0;
+                        top: -30px;
+                        height: 50px;
+                        width: 50px;
+                        background-image: url(assets/img/plumbero-img13.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                    }
+                    .author-detail {
+                        @include flexbox;
+                        @include align-items(center);
+                        .author-img {
+                            height: 60px;
+                            width: 60px;
+                            @include border-radius(50%);
+                            overflow: hidden;
+                        }
+                        .author-info {
+                            margin-left: 15px;
+                            .author-name {
+                                margin-bottom: 0;
+                            }
+                            .author-desc {
+                                color: $primary-color;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+            .left-group {
+                padding-top: 90px;
+                margin-bottom: -50px;
+                .comment-content {
+                    &:nth-child(odd) {
+                        margin-left: 40px;
+                    }
+                }
+                .comment-content {
+                    &:nth-child(even) {
+                        .comment-detail {
+                            margin-bottom: 20px;
+                            @include bp(mdx) {
+                                margin-bottom: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-group {
+                padding-bottom: 90px;
+                margin-top: -50px;
+                @include bp(xl) {
+                    padding-left: 10px;
+                }
+                .comment-content {
+                    &:nth-child(even) {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        @include bp(lgx) {
+            grid-template-columns: auto;
+            .section-head-white-info {
+                text-align: center;
+                margin-bottom: 130px;
+                padding: 0;
+            }
+        }
+        @include bp(mdx) {
+            .section-head-white-info {
+                margin-bottom: 65px;
+            }
+            .comment-inner {
+                grid-column-gap: 30px;
+                .left-group {
+                    padding-top: 70px;
+                    margin: 0;
+                }
+                .right-group {
+                    margin: 0;
+                    padding-bottom: 70px;
+                }
+            }
+        }
+        @include bp(smx) {
+            .comment-inner {
+                grid-template-columns: auto;
+                .left-group {
+                    padding-top: 0px;
+                    .comment-content {
+                        &:nth-child(odd) {
+                            margin-left: 0px;
+                            margin-right: 0px;
+                        }
+                    }
+                }
+                .right-group {
+                    padding-bottom: 0px;
+                    .comment-content {
+                        &:nth-child(even) {
+                            margin-left: 0px;
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

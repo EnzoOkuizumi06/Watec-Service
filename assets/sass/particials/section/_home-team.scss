@@ -1,0 +1,74 @@
+.home-team-section {
+    background-color: $gray-color;
+    padding: 107px 0 181px;
+    @include bp(mdx) {
+        padding: 65px 0 105px;
+    }
+    .team-inner-group {
+        .row {
+            row-gap: 50px;
+        }
+        .team-member {
+            position: relative;
+            z-index: 1;
+            @include bp(xl) {
+                margin: 0 3px;
+            }
+            .team-img {
+                img {
+                    @include bp(mdx) {
+                        width: 100%;
+                    }
+                }
+            }
+            .team-detail {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                padding: 35px 20px 20px;
+                margin: 0 20px;
+                background-image: radial-gradient(at top left, $secondary-color 74%, #fff 42%);
+                text-align: center;
+                .team-name {
+                    h5 {
+                        margin-bottom: 6px;
+                        @include transition(all 0.4s);
+                    }
+                    &:hover {
+                        h5 {
+                            color: $hover-color;
+                        }
+                    }
+                }
+                .job-title {
+                    font-size: 13px;
+                }
+                .team-type-btn {
+                    position: absolute;
+                    left: 50%;
+                    top: -20px;
+                    @include translate(-50%, 0);
+                    @include transition(all 0.5s);
+                    i {
+                        background-color: $light-color;
+                        color: $primary-color;
+                        height: 42px;
+                        width: 42px;
+                        line-height: 41px;
+                        font-size: 15px;
+                        @include border-radius(50%);
+                        text-align: center;
+                        @include transition(all 0.4s);
+                    }
+                    &:hover {
+                        i {
+                            background-color: $hover-color;
+                            color: $light-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+.no-content-section {
+    padding: 110px 0 110px;
+    @include bp (mdx) {
+        padding: 60px 0;
+    }
+}
+.no-content-wrap {
+    text-align: center;
+    .title-wrap {
+        position: relative;
+    }
+    span {
+        color: #e2e2e2;
+        @include font-size(300);
+        font-family: $title-font;
+        font-weight: 800;
+        line-height: 1.1;
+    }
+    .page-content-title {
+        margin-bottom: 0;
+        position: absolute;
+        @include translate(0, -25%);
+        top: 50%;
+        left: 0;
+        right: 0;
+        color: $dark-color;
+        font-size: 60px;
+        @include bp(mdx) {
+            font-size: 28px;
+        }
+    }
+    h6 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        @include bp(mdx) {
+            font-size: 13px;
+        }
+    }
+    .search-form-wrap {
+        max-width: 841px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 26px;
+        overflow: hidden;
+        .search-form {
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: $gray-color;
+            border: 1px solid $primary-color;
+            border-radius: 25px;
+            overflow: hidden;
+            input {
+                padding: 0 55px 0 20px;
+                background-color: $gray-color;
+                height: 50px;
+            }
+            button {
+                padding: 10px 20px;
+                top: 0;
+                right: 0;
+                height: 100%;
+            }
+        }
+    }
+    @include bp(mdx) {
+        span {
+            @include font-size(224);
+        }
+        h1 {
+            @include font-size(30);
+        }
+    }
+    @include bp(smx) {
+        span {
+            @include font-size(124);
+        }
+        h1 {
+            @include font-size(22);
+        }
+        p {
+            @include font-size(14);
+            margin-top: 20px;
+        }
+        .search-form-wrap {
+            margin-top: 20px;
+            .search-form  {
+                input {
+                    height: 46px;
+                }
+            }
+        }
+    }
+}
